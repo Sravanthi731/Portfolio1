@@ -1,10 +1,7 @@
-const sections = document.querySelectorAll(".section");
-
-window.addEventListener("scroll", () => {
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      section.classList.add("show");
-    }
-  });
-});
+function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
